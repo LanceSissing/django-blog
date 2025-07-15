@@ -9,6 +9,9 @@ __pycache__/
 db.sqlite3
 media/
 
+# Environment variables
+env.py
+
 # IDE
 .vscode/
 .idea/
