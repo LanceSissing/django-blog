@@ -25,7 +25,7 @@ os.environ["DATABASE_URL"] = "postgresql://neondb_owner:npg_ijP2xK9NtJks@ep-frag
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w#w1id7andwhb6*mi16=hgvous7ugq7dt(nbt7t*a3wq3_fuh$'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
