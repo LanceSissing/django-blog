@@ -28,7 +28,7 @@ os.environ["DATABASE_URL"] = "postgresql://neondb_owner:npg_ijP2xK9NtJks@ep-frag
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key-please-change')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
