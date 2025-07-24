@@ -19,3 +19,4 @@ env.py
 # OS
 .DS_Store
 Thumbs.db
+blog/fixtures/

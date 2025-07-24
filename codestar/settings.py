@@ -16,6 +16,7 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Connect to env.py file (temporarily set DATABASE_URL directly)
 os.environ["DATABASE_URL"] = "postgresql://neondb_owner:npg_ijP2xK9NtJks@ep-fragrant-morning-a2rn5wbb.eu-central-1.aws.neon.tech/lever_cot_debit_895648"
@@ -28,7 +29,7 @@ os.environ["DATABASE_URL"] = "postgresql://neondb_owner:npg_ijP2xK9NtJks@ep-frag
 SECRET_KEY = os.environ.get('SECRET_KEY', 'dev-secret-key-please-change')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'codestar.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -129,7 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
